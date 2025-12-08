@@ -142,25 +142,35 @@
               <a class="contact-link" :href="`mailto:${email}`">Email</a>
             </div>
           </div>
-          <form class="form" @submit.prevent="submitForm">
+          <form
+            class="form"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            @submit.prevent="submitForm"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="bot-field" v-model="form.botField" />
             <label>
               Your name
-              <input type="text" v-model="form.name" placeholder="Full name" required />
+              <input type="text" name="name" v-model="form.name" placeholder="Full name" required />
             </label>
             <label>
               Phone or email
-              <input type="text" v-model="form.contact" placeholder="How can we reach you?" required />
+              <input type="text" name="contact" v-model="form.contact" placeholder="How can we reach you?" required />
             </label>
             <label>
               Service location
-              <input type="text" v-model="form.location" placeholder="City or neighborhood" />
+              <input type="text" name="location" v-model="form.location" placeholder="City or neighborhood" />
             </label>
             <label>
               What needs attention?
-              <textarea v-model="form.details" rows="4" placeholder="Share the issue so we can help fast"></textarea>
+              <textarea name="details" v-model="form.details" rows="4" placeholder="Share the issue so we can help fast"></textarea>
             </label>
             <button class="btn primary" type="submit">Send request</button>
             <p class="form__note" v-if="confirmation">{{ confirmation }}</p>
+            <p class="form__note error" v-if="formError">{{ formError }}</p>
           </form>
         </section>
       </main>
