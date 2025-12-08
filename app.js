@@ -69,14 +69,43 @@ createApp({
         contact: '',
         location: '',
         details: '',
+        botField: '',
       },
       confirmation: '',
+      formError: '',
+      isSubmitting: false,
     };
   },
   methods: {
-    submitForm() {
-      this.confirmation = 'Thanks for reaching out! We will contact you to schedule your repair.';
-      this.form = { name: '', contact: '', location: '', details: '' };
+    encodeFormData(data) {
+      return new URLSearchParams(data).toString();
+    },
+    async submitForm() {
+      if (this.isSubmitting) return;
+
+      this.isSubmitting = true;
+      this.confirmation = '';
+      this.formError = '';
+
+      try {
+        const payload = {
+          'form-name': 'contact',
+          ...this.form,
+        };
+
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: this.encodeFormData(payload),
+        });
+
+        this.confirmation = 'Thanks for reaching out! We will contact you to schedule your repair.';
+        this.form = { name: '', contact: '', location: '', details: '', botField: '' };
+      } catch (error) {
+        this.formError = 'Something went wrong sending your request. Please try again or message us on Facebook.';
+      } finally {
+        this.isSubmitting = false;
+      }
     },
   },
 }).mount('#app');

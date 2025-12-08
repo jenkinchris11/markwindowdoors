@@ -333,6 +333,10 @@ textarea {
   font-weight: 600;
 }
 
+.form__note.error {
+  color: #b42318;
+}
+
 .contact-links {
   display: flex;
   gap: 12px;
