@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mark's Window and Doors Repair Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app" class="page">
+      <header class="nav">
+        <div class="logo">Mark's Window & Doors</div>
+        <nav class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#gallery">Projects</a>
+          <a href="#testimonials">Reviews</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="btn primary" :href="facebookUrl" target="_blank" rel="noreferrer">Facebook</a>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero__content">
+            <p class="eyebrow">Trusted local specialist</p>
+            <h1>
+              Crystal-clear repairs for windows & doors that keep your home secure and efficient.
+            </h1>
+            <p class="subtitle">
+              Mark's Window and Doors Repair Specialist delivers meticulous window and door repairs—frames,
+              seals, tracks, and hardware—so your home looks polished and feels comfortable again. Updated
+              photos and notes are always shared on our Facebook page.
+            </p>
+            <div class="cta-group">
+              <a class="btn primary" href="#contact">Request a visit</a>
+              <a class="btn ghost" :href="facebookUrl" target="_blank" rel="noreferrer">See Facebook updates</a>
+            </div>
+            <div class="highlights">
+              <div class="highlight-card" v-for="item in highlights" :key="item.title">
+                <div class="icon">{{ item.icon }}</div>
+                <div>
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.copy }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero__panel">
+            <div class="panel">
+              <h2>Common repairs</h2>
+              <ul>
+                <li v-for="repair in repairs" :key="repair">{{ repair }}</li>
+              </ul>
+              <div class="stat">
+                <strong>{{ experienceYears }}+ years</strong>
+                <span>Hands-on window & door expertise</span>
+              </div>
+              <a class="btn secondary" href="#services">Explore our services</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" class="section">
+          <div class="section__heading">
+            <p class="eyebrow">Services</p>
+            <h2>Precision repairs that extend the life of your windows and doors</h2>
+            <p class="subtitle">
+              We carefully diagnose the issue, source the right parts, and restore smooth, secure operation. Every
+              visit includes clear communication and tidy workmanship.
+            </p>
+          </div>
+          <div class="cards-grid">
+            <article class="card" v-for="service in services" :key="service.title">
+              <div class="card__icon">{{ service.icon }}</div>
+              <h3>{{ service.title }}</h3>
+              <p>{{ service.copy }}</p>
+              <ul>
+                <li v-for="detail in service.details" :key="detail">{{ detail }}</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="gallery">
+          <div class="section__heading">
+            <p class="eyebrow">Recent projects</p>
+            <h2>Repairs you can see and feel</h2>
+            <p class="subtitle">
+              Photos and before/after notes are shared on our Facebook page so you can see our craftsmanship up close.
+            </p>
+          </div>
+          <div class="gallery">
+            <div class="gallery__item" v-for="project in projects" :key="project.title">
+              <div class="gallery__image" :style="{ backgroundImage: `linear-gradient(135deg, rgba(18, 111, 178, 0.85), rgba(38, 198, 218, 0.85)), url(${project.image})` }"></div>
+              <div class="gallery__content">
+                <p class="eyebrow">{{ project.type }}</p>
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.copy }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="cta-banner">
+            <div>
+              <h3>See more on Facebook</h3>
+              <p>Browse job highlights and customer comments directly on our Facebook page.</p>
+            </div>
+            <a class="btn primary" :href="facebookUrl" target="_blank" rel="noreferrer">Visit Facebook</a>
+          </div>
+        </section>
+
+        <section id="testimonials" class="section testimonials">
+          <div class="section__heading">
+            <p class="eyebrow">Reviews</p>
+            <h2>Homeowners appreciate the care we bring to every visit</h2>
+          </div>
+          <div class="cards-grid">
+            <article class="card testimonial" v-for="review in testimonials" :key="review.author">
+              <div class="stars">★★★★★</div>
+              <p class="quote">“{{ review.quote }}”</p>
+              <p class="author">{{ review.author }}</p>
+              <p class="meta">{{ review.meta }}</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section split" id="contact">
+          <div class="section__heading">
+            <p class="eyebrow">Schedule</p>
+            <h2>Tell us about your window or door issue</h2>
+            <p class="subtitle">
+              Share a few details and we'll coordinate a time to evaluate the repair. You can also send photos or a
+              quick note through Facebook Messenger.
+            </p>
+            <div class="contact-links">
+              <a class="contact-link" :href="facebookUrl" target="_blank" rel="noreferrer">Messenger</a>
+              <a class="contact-link" :href="`mailto:${email}`">Email</a>
+            </div>
+          </div>
+          <form class="form" @submit.prevent="submitForm">
+            <label>
+              Your name
+              <input type="text" v-model="form.name" placeholder="Full name" required />
+            </label>
+            <label>
+              Phone or email
+              <input type="text" v-model="form.contact" placeholder="How can we reach you?" required />
+            </label>
+            <label>
+              Service location
+              <input type="text" v-model="form.location" placeholder="City or neighborhood" />
+            </label>
+            <label>
+              What needs attention?
+              <textarea v-model="form.details" rows="4" placeholder="Share the issue so we can help fast"></textarea>
+            </label>
+            <button class="btn primary" type="submit">Send request</button>
+            <p class="form__note" v-if="confirmation">{{ confirmation }}</p>
+          </form>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <p class="logo">Mark's Window & Doors Repair Specialist</p>
+          <p>Local, detail-focused repairs for windows, patio doors, and entries.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#services">Services</a>
+          <a :href="facebookUrl" target="_blank" rel="noreferrer">Facebook</a>
+          <a :href="`mailto:${email}`">Email</a>
+        </div>
+        <p class="footer__note">Photos and updates sourced from our Facebook page.</p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.4.38/dist/vue.global.prod.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
