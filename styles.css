@@ -47,9 +47,35 @@ a {
 }
 
 .logo {
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo__image {
+  height: 52px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(6, 57, 112, 0.12);
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo__title {
+  font-weight: 800;
   font-size: 18px;
   color: var(--blue-700);
+}
+
+.logo__subtitle {
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--gray-700);
+  letter-spacing: 0.01em;
 }
 
 .nav-links {
