@@ -34,54 +34,39 @@ a {
 
 .nav {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px 18px;
+  gap: 12px;
+  padding: 18px 18px 16px;
   background: var(--white);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(6, 57, 112, 0.08);
   position: sticky;
   top: 12px;
   z-index: 10;
+  text-align: center;
 }
 
 .logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .logo__image {
-  height: 52px;
-  width: auto;
-  border-radius: 12px;
+  height: 150px;
+  width: 150px;
+  border-radius: 16px;
   box-shadow: 0 8px 18px rgba(6, 57, 112, 0.12);
-}
-
-.logo__text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.logo__title {
-  font-weight: 800;
-  font-size: 18px;
-  color: var(--blue-700);
-}
-
-.logo__subtitle {
-  font-weight: 700;
-  font-size: 12px;
-  color: var(--gray-700);
-  letter-spacing: 0.01em;
+  object-fit: contain;
 }
 
 .nav-links {
   display: flex;
   gap: 16px;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .nav a {
@@ -104,6 +89,10 @@ a {
   border: 1px solid transparent;
   cursor: pointer;
   transition: transform 0.1s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.nav .btn {
+  align-self: center;
 }
 
 .btn.primary {
@@ -401,12 +390,11 @@ textarea {
 
 @media (max-width: 640px) {
   .nav {
-    flex-wrap: wrap;
+    padding: 16px;
   }
 
   .nav-links {
     width: 100%;
-    justify-content: space-between;
   }
 
   .cta-banner {
