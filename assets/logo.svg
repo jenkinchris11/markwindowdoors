@@ -1,0 +1,22 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="120" fill="#F5F8FC"/>
+  <rect x="300" y="82" width="104" height="288" rx="12" fill="#0A2746"/>
+  <rect x="316" y="102" width="72" height="64" rx="6" fill="#EAF2FA" stroke="#EAF2FA" stroke-width="8"/>
+  <rect x="316" y="182" width="72" height="56" rx="6" fill="#EAF2FA" stroke="#EAF2FA" stroke-width="8"/>
+  <rect x="316" y="258" width="72" height="88" rx="6" fill="#EAF2FA" stroke="#EAF2FA" stroke-width="8"/>
+  <circle cx="360" cy="300" r="9" fill="#0A2746"/>
+  <rect x="118" y="122" width="148" height="122" rx="12" fill="#0A2746"/>
+  <rect x="134" y="138" width="56" height="86" rx="6" fill="#EAF2FA" stroke="#EAF2FA" stroke-width="6"/>
+  <rect x="208" y="138" width="56" height="86" rx="6" fill="#EAF2FA" stroke="#EAF2FA" stroke-width="6"/>
+  <path d="M257 256.5C260.5 245.5 267 224 267 224C267 224 281.5 226 291 230C300.5 234 307 238.5 307 238.5L304 258.5C304 258.5 292.5 253.5 283.5 251.5C274.5 249.5 264.5 249.5 264.5 249.5L257 256.5Z" fill="#173D68"/>
+  <path d="M212 320C216.5 286 227 250 227 250C227 250 250 252 265 258C280 264 290 272.5 290 272.5C290 272.5 287 293 283.5 313.5C280 334 277 353 277 353L253 358L253 344L243 346L242 358H213L212 320Z" fill="#0A2746"/>
+  <circle cx="245.5" cy="192.5" r="32.5" fill="#0A2746"/>
+  <path d="M214 190C214 176.745 224.745 166 238 166H254C267.255 166 278 176.745 278 190V215C278 228.255 267.255 239 254 239H238C224.745 239 214 228.255 214 215V190Z" fill="#0A2746"/>
+  <rect x="190" y="190" width="42" height="86" rx="18" fill="#173D68"/>
+  <path d="M180 325C180 317.268 186.268 311 194 311H223C230.732 311 237 317.268 237 325V356H180V325Z" fill="#173D68"/>
+  <path d="M150 374C150 359.641 161.641 348 176 348H226C240.359 348 252 359.641 252 374V397H150V374Z" fill="#0A2746"/>
+  <path d="M306 386C306 373.297 316.297 363 329 363H387C399.703 363 410 373.297 410 386V407H306V386Z" fill="#0A2746"/>
+  <rect x="106" y="352" width="270" height="16" rx="8" fill="#173D68" opacity="0.9"/>
+  <text x="256" y="446" text-anchor="middle" font-family="'Inter', 'Segoe UI', system-ui" font-size="26" font-weight="700" fill="#0A2746">Mark's Window and Doors</text>
+  <text x="256" y="476" text-anchor="middle" font-family="'Inter', 'Segoe UI', system-ui" font-size="20" font-weight="600" fill="#0A2746">Repair Specialist</text>
+</svg>
