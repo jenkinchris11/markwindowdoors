@@ -288,31 +288,9 @@ main {
   gap: 12px;
 }
 
-.testimonials .testimonial {
-  background: var(--white);
-  border-color: rgba(18, 111, 178, 0.2);
-}
-
-.stars {
-  color: #f5a524;
-  font-weight: 700;
-}
-
-.quote {
-  color: var(--blue-900);
-  margin: 0;
-  font-weight: 600;
-}
-
-.author {
-  margin: 4px 0 0;
-  font-weight: 700;
-}
-
-.meta {
-  margin: 0;
-  color: var(--gray-700);
-  font-size: 14px;
+.reviews-embed {
+  display: flex;
+  justify-content: center;
 }
 
 .split {

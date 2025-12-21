@@ -119,15 +119,13 @@
         <section id="testimonials" class="section testimonials">
           <div class="section__heading">
             <p class="eyebrow">Reviews</p>
-            <h2>Homeowners appreciate the care we bring to every visit</h2>
+            <h2>See the latest Facebook reviews</h2>
+            <p class="subtitle">Real homeowner feedback powered by our Facebook Reviews widget.</p>
           </div>
-          <div class="cards-grid">
-            <article class="card testimonial" v-for="review in testimonials" :key="review.author">
-              <div class="stars">★★★★★</div>
-              <p class="quote">“{{ review.quote }}”</p>
-              <p class="author">{{ review.author }}</p>
-              <p class="meta">{{ review.meta }}</p>
-            </article>
+          <div class="reviews-embed">
+            <!-- Elfsight Facebook Reviews | Untitled Facebook Reviews 2 -->
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div class="elfsight-app-99f9de93-dcaf-4945-a000-3c5e228f9b70" data-elfsight-app-lazy></div>
           </div>
         </section>
 
