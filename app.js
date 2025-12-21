@@ -59,11 +59,6 @@ createApp({
           image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80',
         },
       ],
-      testimonials: [
-        { quote: 'Mark walked me through every repair option and left the workspace spotless.', author: 'Janelle P.', meta: 'Patio door alignment & rollers' },
-        { quote: 'Our windows finally seal tight—no more drafts. Great communication start to finish.', author: 'Chris L.', meta: 'Window re-sealing' },
-        { quote: 'Fast response and the sliding door glides like new again. Highly recommend!', author: 'David R.', meta: 'Hardware refresh' },
-      ],
       form: {
         name: '',
         contact: '',
