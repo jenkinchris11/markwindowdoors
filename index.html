@@ -21,30 +21,27 @@
               <img src="assets/Logo.png" alt="Mark's Window and Doors Repair Specialist logo" class="logo__image" />
             </div>
           </div>
-        </div>
-      </div>
-      </header>
-
-      <main>
-          <div>
-            <p class="eyebrow">Trusted local specialist</p>
-            <h1>Crystal-clear repairs for windows & doors that keep your home secure and efficient.</h1>
-          </div>
-          <p class="subtitle">
-            Mark's Window and Doors Repair Specialist delivers meticulous window and door repairs—frames, seals,
-            tracks, and hardware—so your home looks polished and feels comfortable again. Updated photos and notes
-            are always shared on our Facebook page.
-          </p>
-          <div class="cta-group">
-            <a class="btn primary" href="#contact">Request a visit</a>
-            <a class="btn ghost" :href="facebookUrl" target="_blank" rel="noreferrer">See Facebook updates</a>
-          </div>
-          <div class="highlights">
-            <div class="highlight-card" v-for="item in highlights" :key="item.title">
-              <div class="icon">{{ item.icon }}</div>
-              <div>
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.copy }}</p>
+          <div class="title-hero__copy">
+            <div>
+              <p class="eyebrow">Trusted local specialist</p>
+              <h1>Crystal-clear repairs for windows & doors that keep your home secure and efficient.</h1>
+            </div>
+            <p class="subtitle">
+              Mark's Window and Doors Repair Specialist delivers meticulous window and door repairs—frames, seals,
+              tracks, and hardware—so your home looks polished and feels comfortable again. Updated photos and notes
+              are always shared on our Facebook page.
+            </p>
+            <div class="cta-group">
+              <a class="btn primary" href="#contact">Request a visit</a>
+              <a class="btn ghost" :href="facebookUrl" target="_blank" rel="noreferrer">See Facebook updates</a>
+            </div>
+            <div class="highlights">
+              <div class="highlight-card" v-for="item in highlights" :key="item.title">
+                <div class="icon">{{ item.icon }}</div>
+                <div>
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.copy }}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -62,6 +59,9 @@
             <a class="btn secondary" href="#services">Explore our services</a>
           </div>
         </div>
+      </header>
+
+      <main>
         <section id="services" class="section">
           <div class="section__heading">
             <p class="eyebrow">Services</p>
