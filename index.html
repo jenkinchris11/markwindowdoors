@@ -14,60 +14,52 @@
   </head>
   <body>
     <div id="app" class="page">
-      <header class="nav">
-        <div class="logo">
-          <img src="assets/Logo.png" alt="Mark's Window and Doors Repair Specialist logo" class="logo__image" />
+      <header class="hero title-hero">
+        <div class="hero__content">
+          <div class="title-hero__brand">
+            <div class="logo">
+              <img src="assets/Logo.png" alt="Mark's Window and Doors Repair Specialist logo" class="logo__image" />
+            </div>
+            <div>
+              <p class="eyebrow">Trusted local specialist</p>
+              <h1>Crystal-clear repairs for windows & doors that keep your home secure and efficient.</h1>
+            </div>
+          </div>
+          <p class="subtitle">
+            Mark's Window and Doors Repair Specialist delivers meticulous window and door repairs—frames, seals,
+            tracks, and hardware—so your home looks polished and feels comfortable again. Updated photos and notes
+            are always shared on our Facebook page.
+          </p>
+          <div class="cta-group">
+            <a class="btn primary" href="#contact">Request a visit</a>
+            <a class="btn ghost" :href="facebookUrl" target="_blank" rel="noreferrer">See Facebook updates</a>
+          </div>
+          <div class="highlights">
+            <div class="highlight-card" v-for="item in highlights" :key="item.title">
+              <div class="icon">{{ item.icon }}</div>
+              <div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.copy }}</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <nav class="nav-links">
-          <a href="#services">Services</a>
-          <a href="#gallery">Projects</a>
-          <a href="#testimonials">Reviews</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <a class="btn primary" :href="facebookUrl" target="_blank" rel="noreferrer">Facebook</a>
+        <div class="hero__panel title-hero__panel">
+          <div class="panel">
+            <h2>Common repairs</h2>
+            <ul>
+              <li v-for="repair in repairs" :key="repair">{{ repair }}</li>
+            </ul>
+            <div class="stat">
+              <strong>{{ experienceYears }}+ years</strong>
+              <span>Hands-on window & door expertise</span>
+            </div>
+            <a class="btn secondary" href="#services">Explore our services</a>
+          </div>
+        </div>
       </header>
 
       <main>
-        <section class="hero">
-          <div class="hero__content">
-            <p class="eyebrow">Trusted local specialist</p>
-            <h1>
-              Crystal-clear repairs for windows & doors that keep your home secure and efficient.
-            </h1>
-            <p class="subtitle">
-              Mark's Window and Doors Repair Specialist delivers meticulous window and door repairs—frames,
-              seals, tracks, and hardware—so your home looks polished and feels comfortable again. Updated
-              photos and notes are always shared on our Facebook page.
-            </p>
-            <div class="cta-group">
-              <a class="btn primary" href="#contact">Request a visit</a>
-              <a class="btn ghost" :href="facebookUrl" target="_blank" rel="noreferrer">See Facebook updates</a>
-            </div>
-            <div class="highlights">
-              <div class="highlight-card" v-for="item in highlights" :key="item.title">
-                <div class="icon">{{ item.icon }}</div>
-                <div>
-                  <h3>{{ item.title }}</h3>
-                  <p>{{ item.copy }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="hero__panel">
-            <div class="panel">
-              <h2>Common repairs</h2>
-              <ul>
-                <li v-for="repair in repairs" :key="repair">{{ repair }}</li>
-              </ul>
-              <div class="stat">
-                <strong>{{ experienceYears }}+ years</strong>
-                <span>Hands-on window & door expertise</span>
-              </div>
-              <a class="btn secondary" href="#services">Explore our services</a>
-            </div>
-          </div>
-        </section>
-
         <section id="services" class="section">
           <div class="section__heading">
             <p class="eyebrow">Services</p>

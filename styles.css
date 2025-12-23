@@ -29,58 +29,34 @@ a {
 .page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 220px 20px 72px;
+  padding: 72px 20px 72px;
 }
 
-.nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 18px 18px 16px;
+.title-hero {
   background: var(--white);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(6, 57, 112, 0.08);
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 1200px;
-  z-index: 10;
-  text-align: center;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(6, 57, 112, 0.08);
+}
+
+.title-hero__brand {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
   display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 .logo__image {
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
   border-radius: 16px;
   box-shadow: 0 8px 18px rgba(6, 57, 112, 0.12);
   object-fit: contain;
-}
-
-.nav-links {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.nav a {
-  font-weight: 600;
-  color: var(--blue-900);
-  opacity: 0.9;
-}
-
-.nav a:hover {
-  color: var(--blue-700);
 }
 
 .btn {
@@ -93,10 +69,6 @@ a {
   border: 1px solid transparent;
   cursor: pointer;
   transition: transform 0.1s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-
-.nav .btn {
-  align-self: center;
 }
 
 .btn.primary {
@@ -124,7 +96,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 80px;
-  margin-top: 32px;
 }
 
 .hero {
