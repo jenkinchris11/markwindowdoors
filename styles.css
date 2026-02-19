@@ -281,6 +281,23 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.gallery::-webkit-scrollbar {
+  width: 10px;
+}
+
+.gallery::-webkit-scrollbar-track {
+  background: var(--gray-100);
+  border-radius: 999px;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+  background: rgba(18, 111, 178, 0.45);
+  border-radius: 999px;
 }
 
 .gallery__item {
@@ -291,9 +308,10 @@ main {
 }
 
 .gallery__image {
-  height: 160px;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: block;
+  object-fit: cover;
 }
 
 .gallery__content {
@@ -406,5 +424,9 @@ textarea {
   .cta-banner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .gallery {
+    max-height: 60vh;
   }
 }
