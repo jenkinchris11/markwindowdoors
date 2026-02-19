@@ -40,7 +40,6 @@ createApp({
         },
       ],
       galleryImages: [
-        { src: 'MarkImages/347152073_793640708817551_4586314933375911809_n.png', alt: "Gallery project photo 1" },
         { src: 'MarkImages/467769600_527364233617075_596560543178351017_n.jpg', alt: "Gallery project photo 2" },
         { src: 'MarkImages/470134492_540280042325494_8946955470268142620_n.jpg', alt: "Gallery project photo 3" },
         { src: 'MarkImages/470135600_540279782325520_928757384190155396_n.jpg', alt: "Gallery project photo 4" },
@@ -123,7 +122,6 @@ createApp({
         { src: 'MarkImages/481955004_601694972850667_748531847857502672_n.jpg', alt: "Gallery project photo 81" },
         { src: 'MarkImages/481959410_599344473085717_5328178334959038642_n.jpg', alt: "Gallery project photo 82" },
         { src: 'MarkImages/481960196_601694909517340_7466179315069508045_n.jpg', alt: "Gallery project photo 83" },
-        { src: 'MarkImages/481971996_601695682850596_8456192532484299743_n.jpg', alt: "Gallery project photo 84" },
         { src: 'MarkImages/481975814_601694996183998_9104624975691774494_n.jpg', alt: "Gallery project photo 85" },
         { src: 'MarkImages/481976521_601698369516994_6596201933024754906_n.jpg', alt: "Gallery project photo 86" },
         { src: 'MarkImages/481977740_601698239517007_8298234377017752318_n.jpg', alt: "Gallery project photo 87" },
