@@ -161,9 +161,6 @@ createApp({
     closeGalleryModal() {
       this.selectedImage = null;
     },
-    encodeFormData(data) {
-      return new URLSearchParams(data).toString();
-    },
     async submitForm() {
       if (this.isSubmitting) return;
 
@@ -172,18 +169,27 @@ createApp({
       this.formError = '';
 
       try {
-        const payload = {
-          'form-name': 'contact',
-          ...this.form,
-        };
-
-        await fetch('/', {
+        const response = await fetch('/.netlify/functions/contact', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: this.encodeFormData(payload),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(this.form),
         });
 
-        this.confirmation = 'Thanks for reaching out! We will contact you to schedule your repair.';
+        let responsePayload = null;
+        try {
+          responsePayload = await response.json();
+        } catch (parseError) {
+          responsePayload = null;
+        }
+
+        if (!response.ok) {
+          this.formError = responsePayload?.error?.message
+            || 'Something went wrong sending your request. Please try again or message us on Facebook.';
+          return;
+        }
+
+        this.confirmation = responsePayload?.message
+          || 'Thanks for reaching out! We will contact you to schedule your repair.';
         this.form = { name: '', contact: '', location: '', details: '', botField: '' };
       } catch (error) {
         this.formError = 'Something went wrong sending your request. Please try again or message us on Facebook.';
