@@ -5,7 +5,7 @@ createApp({
     return {
       facebookUrl: 'https://www.facebook.com/p/Marks-Window-and-Doors-Repair-Specialist-100090305083564/',
       email: 'info@markswindowanddoors.com',
-      experienceYears: 20+,
+      experienceYears: 20,+
       highlights: [
         { icon: '🛠️', title: 'Skilled repairs', copy: 'From sticky sliders to drafty frames, we fix the cause—not just the symptom.' },
         { icon: '🚚', title: 'On-site service', copy: 'We come equipped with the right parts and tools to keep your day moving.' },
