@@ -16,7 +16,7 @@
     <div class="top-banner">
       <img src="assets/image.png" alt="Window and door repair banner" class="top-banner__image" />
     </div>
-    <div id="app" class="page">
+    <div id="app" class="page" @keyup.esc="closeGalleryModal">
       <header class="site-header">
         <nav class="site-header__links">
           <a href="#services">Services</a>
@@ -100,14 +100,18 @@
             </p>
           </div>
           <div class="gallery">
-            <div class="gallery__item" v-for="project in projects" :key="project.title">
-              <div class="gallery__image" :style="{ backgroundImage: `linear-gradient(135deg, rgba(18, 111, 178, 0.85), rgba(38, 198, 218, 0.85)), url(${project.image})` }"></div>
-              <div class="gallery__content">
-                <p class="eyebrow">{{ project.type }}</p>
-                <h3>{{ project.title }}</h3>
-                <p>{{ project.copy }}</p>
-              </div>
-            </div>
+            <figure
+              class="gallery__item"
+              v-for="image in galleryImages"
+              :key="image.src"
+              role="button"
+              tabindex="0"
+              @click="openGalleryModal(image)"
+              @keydown.enter.prevent="openGalleryModal(image)"
+              @keydown.space.prevent="openGalleryModal(image)"
+            >
+              <img class="gallery__image" :src="image.src" :alt="image.alt" loading="lazy" />
+            </figure>
           </div>
           <div class="cta-banner">
             <div>
@@ -199,6 +203,13 @@
         </div>
         <p class="footer__note">Photos and updates sourced from our Facebook page.</p>
       </footer>
+
+      <div v-if="selectedImage" class="gallery-modal" @click.self="closeGalleryModal" role="dialog" aria-modal="true">
+        <button class="gallery-modal__close" type="button" @click="closeGalleryModal" aria-label="Close image viewer">
+          ×
+        </button>
+        <img class="gallery-modal__image" :src="selectedImage.src" :alt="selectedImage.alt" />
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@3.4.38/dist/vue.global.prod.js"></script>
