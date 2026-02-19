@@ -151,9 +151,16 @@ createApp({
       confirmation: '',
       formError: '',
       isSubmitting: false,
+      selectedImage: null,
     };
   },
   methods: {
+    openGalleryModal(image) {
+      this.selectedImage = image;
+    },
+    closeGalleryModal() {
+      this.selectedImage = null;
+    },
     encodeFormData(data) {
       return new URLSearchParams(data).toString();
     },
